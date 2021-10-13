@@ -23,4 +23,5 @@ sudo make clean install
 
 # Patches applied
 
-- []()
+- [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/)
+
