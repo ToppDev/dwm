@@ -32,4 +32,5 @@ sudo make clean install
 - [resizecorners](https://dwm.suckless.org/patches/resizecorners/)
 - [scratchpads](https://dwm.suckless.org/patches/scratchpads/)
 - [statusallmons](https://dwm.suckless.org/patches/statusallmons/)
+- [sticky](https://dwm.suckless.org/patches/sticky/)
 
