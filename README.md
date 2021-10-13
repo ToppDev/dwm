@@ -29,4 +29,5 @@ sudo make clean install
 - [deck](https://dwm.suckless.org/patches/deck/)
 - [fibonacci](https://dwm.suckless.org/patches/fibonacci/)
 - [hide_vacant_tags](https://dwm.suckless.org/patches/hide_vacant_tags/)
+- [resizecorners](https://dwm.suckless.org/patches/resizecorners/)
 
