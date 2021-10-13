@@ -28,4 +28,5 @@ sudo make clean install
 - [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
 - [deck](https://dwm.suckless.org/patches/deck/)
 - [fibonacci](https://dwm.suckless.org/patches/fibonacci/)
+- [hide_vacant_tags](https://dwm.suckless.org/patches/hide_vacant_tags/)
 
