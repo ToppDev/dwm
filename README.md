@@ -27,4 +27,5 @@ sudo make clean install
 - [bottomstack](https://dwm.suckless.org/patches/bottomstack/)
 - [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
 - [deck](https://dwm.suckless.org/patches/deck/)
+- [fibonacci](https://dwm.suckless.org/patches/fibonacci/)
 
