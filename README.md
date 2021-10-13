@@ -7,6 +7,10 @@ This is my fork of [dwm, the dynamic window manager](https://dwm.suckless.org/) 
 
 In order to build dwm you need
 - the `Xlib` header files
+- swallow patch
+  - libxcb
+  - Xlib-libxcb
+  - xcb-res
 
 
 # Installation
@@ -33,4 +37,5 @@ sudo make clean install
 - [scratchpads](https://dwm.suckless.org/patches/scratchpads/)
 - [statusallmons](https://dwm.suckless.org/patches/statusallmons/)
 - [sticky](https://dwm.suckless.org/patches/sticky/)
+- [swallow](https://dwm.suckless.org/patches/swallow/)
 
