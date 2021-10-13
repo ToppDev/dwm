@@ -31,4 +31,5 @@ sudo make clean install
 - [hide_vacant_tags](https://dwm.suckless.org/patches/hide_vacant_tags/)
 - [resizecorners](https://dwm.suckless.org/patches/resizecorners/)
 - [scratchpads](https://dwm.suckless.org/patches/scratchpads/)
+- [statusallmons](https://dwm.suckless.org/patches/statusallmons/)
 
