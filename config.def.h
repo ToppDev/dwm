@@ -45,6 +45,7 @@ static const Layout layouts[] = {
 	{ "TTT",      bstack },  /* Master on top, slaves on bottom */
 	{ "|M|",      centeredmaster },         /* Master in middle, slaves on sides */
 	{ ">M>",      centeredfloatingmaster }, /* Same but master floats */
+	{ "[D]",      deck },                   /* Master on left, slaves in monocle-like mode on right */
 };
 
 /* key definitions */
