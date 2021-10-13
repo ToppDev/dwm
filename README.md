@@ -25,4 +25,5 @@ sudo make clean install
 
 - [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/)
 - [bottomstack](https://dwm.suckless.org/patches/bottomstack/)
+- [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
 
