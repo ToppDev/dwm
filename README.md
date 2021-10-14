@@ -40,4 +40,5 @@ sudo make clean install
 - [swallow](https://dwm.suckless.org/patches/swallow/)
 - [systray](https://dwm.suckless.org/patches/systray/)
 - [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/)
+- [Xresources](https://dwm.suckless.org/patches/xresources/)
 
