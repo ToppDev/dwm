@@ -42,4 +42,5 @@ sudo make clean install
 - [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/)
 - [Xresources](https://dwm.suckless.org/patches/xresources/)
 - [viewontag](https://dwm.suckless.org/patches/viewontag/)
+- [restartsig](https://dwm.suckless.org/patches/restartsig/)
 
