@@ -44,4 +44,5 @@ sudo make clean install
 - [viewontag](https://dwm.suckless.org/patches/viewontag/)
 - [restartsig](https://dwm.suckless.org/patches/restartsig/)
 - [shiftview](https://lists.suckless.org/dev/1104/7590.html)
+- [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/)
 
