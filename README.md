@@ -43,4 +43,5 @@ sudo make clean install
 - [Xresources](https://dwm.suckless.org/patches/xresources/)
 - [viewontag](https://dwm.suckless.org/patches/viewontag/)
 - [restartsig](https://dwm.suckless.org/patches/restartsig/)
+- [shiftview](https://lists.suckless.org/dev/1104/7590.html)
 
