@@ -3,7 +3,7 @@
 This is my fork of [dwm, the dynamic window manager](https://dwm.suckless.org/) which is an extremely fast, small, and dynamic window manager for X.
 
 
-# Requirements
+## Requirements
 
 In order to build dwm you need
 - the `Xlib` header files
@@ -13,7 +13,7 @@ In order to build dwm you need
   - xcb-res
 
 
-# Installation
+## Installation
 
 Edit config.mk to match your local setup (dwm is installed into
 the /usr/local namespace by default).
@@ -25,7 +25,7 @@ sudo make clean install
 ```
 
 
-# Patches applied
+## Patches applied
 
 - [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/)
 - [bottomstack](https://dwm.suckless.org/patches/bottomstack/)
@@ -45,4 +45,11 @@ sudo make clean install
 - [restartsig](https://dwm.suckless.org/patches/restartsig/)
 - [shiftview](https://lists.suckless.org/dev/1104/7590.html)
 - [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/)
+
+
+## Acknowledgements
+
+Some ideas and code was taken from other projects. Credits for those go to
+
+* [Luke Smith](https://github.com/LukeSmithxyz/dwm)
 

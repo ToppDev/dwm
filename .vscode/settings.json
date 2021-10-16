@@ -1,5 +1,5 @@
 {
     "editor.formatOnSave": false,
-    "editor.formatOnType": true,
+    "editor.formatOnType": false,
     "editor.insertSpaces": false,
 }
