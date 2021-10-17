@@ -52,4 +52,3 @@ sudo make clean install
 Some ideas and code was taken from other projects. Credits for those go to
 
 * [Luke Smith](https://github.com/LukeSmithxyz/dwm)
-
