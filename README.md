@@ -46,6 +46,7 @@ sudo make clean install
 - [shiftview](https://lists.suckless.org/dev/1104/7590.html)
 - [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/)
 - [dwm-systray-dwmblocks](https://github.com/ashish-yadav11/dwmblocks)
+- [cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/)
 
 
 ## Acknowledgements
