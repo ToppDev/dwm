@@ -47,6 +47,7 @@ sudo make clean install
 - [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/)
 - [dwm-systray-dwmblocks](https://github.com/ashish-yadav11/dwmblocks)
 - [cyclelayouts](https://dwm.suckless.org/patches/cyclelayouts/)
+- [autostart](https://dwm.suckless.org/patches/autostart/) - modified version which only starts `dwmblocks`
 
 
 ## Acknowledgements
