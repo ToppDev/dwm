@@ -28,10 +28,47 @@ static char normfgcolor[]     = "#bbbbbb";
 static char selfgcolor[]      = "#eeeeee";
 static char selbordercolor[]  = "#770000";
 static char selbgcolor[]      = "#005577";
+static char color0[]          = "#000000"; /* black  dark  */
+static char color8[]          = "#79A9FF"; /* black  light */
+static char color1[]          = "#ff5555"; /* red    dark  */
+static char color9[]          = "#ff6e67"; /* red    light */
+static char color2[]          = "#50fa7b"; /* green  dark  */
+static char color10[]         = "#5af78e"; /* green  light */
+static char color3[]          = "#f1fa8c"; /* yellow dark  */
+static char color11[]         = "#f4f99d"; /* yellow light */
+static char color4[]          = "#6790EB"; /* blue   dark  */
+static char color12[]         = "#79A9FF"; /* blue   light */
+static char color5[]          = "#ff79c6"; /* purple dark  */
+static char color13[]         = "#ff92d0"; /* purple light */
+static char color6[]          = "#8be9fd"; /* cyan   dark  */
+static char color14[]         = "#9aedfe"; /* cyan   light */
+static char color7[]          = "#bfbfbf"; /* white  dark  */
+static char color15[]         = "#e6e6e6"; /* white  light */
+
+enum { SchemeNorm,  SchemeCol0,  SchemeCol1,  SchemeCol2,  SchemeCol3,  SchemeCol4,
+       SchemeCol5,  SchemeCol6,  SchemeCol7,  SchemeCol8,  SchemeCol9,  SchemeCol10,
+       SchemeCol11, SchemeCol12, SchemeCol13, SchemeCol14, SchemeCol15, SchemeSel }; /* color schemes */
+
 static char *colors[][3]      = {
 	/*               fg           bg           border   */
-	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+	[SchemeNorm]  = { normfgcolor, normbgcolor, normbordercolor }, // \x0b
+	[SchemeCol0]  = { color0,      normbgcolor, normbordercolor }, // \x0c
+	[SchemeCol1]  = { color1,      normbgcolor, normbordercolor }, // \x0d
+	[SchemeCol2]  = { color2,      normbgcolor, normbordercolor }, // \x0e
+	[SchemeCol3]  = { color3,      normbgcolor, normbordercolor }, // \x0f
+	[SchemeCol4]  = { color4,      normbgcolor, normbordercolor }, // \x10
+	[SchemeCol5]  = { color5,      normbgcolor, normbordercolor }, // \x11
+	[SchemeCol6]  = { color6,      normbgcolor, normbordercolor }, // \x12
+	[SchemeCol7]  = { color7,      normbgcolor, normbordercolor }, // \x13
+	[SchemeCol8]  = { color8,      normbgcolor, normbordercolor }, // \x14
+	[SchemeCol9]  = { color9,      normbgcolor, normbordercolor }, // \x15
+	[SchemeCol10] = { color10,     normbgcolor, normbordercolor }, // \x16
+	[SchemeCol11] = { color11,     normbgcolor, normbordercolor }, // \x17
+	[SchemeCol12] = { color12,     normbgcolor, normbordercolor }, // \x18
+	[SchemeCol13] = { color13,     normbgcolor, normbordercolor }, // \x19
+	[SchemeCol14] = { color14,     normbgcolor, normbordercolor }, // \x1a
+	[SchemeCol15] = { color15,     normbgcolor, normbordercolor }, // \x1b
+	[SchemeSel]   = { selfgcolor,  selbgcolor,  selbordercolor  }, // \x1c
 };
 
 typedef struct {
@@ -133,6 +170,22 @@ ResourcePref resources[] = {
 		// { "color0",             STRING,  &selfgcolor },
 		// { "color8",             STRING,  &selbordercolor },
 		// { "color4",             STRING,  &selbgcolor },
+		{ "color0",             STRING,  &color0 },
+		{ "color1",             STRING,  &color1 },
+		{ "color2",             STRING,  &color2 },
+		{ "color3",             STRING,  &color3 },
+		{ "color4",             STRING,  &color4 },
+		{ "color5",             STRING,  &color5 },
+		{ "color6",             STRING,  &color6 },
+		{ "color7",             STRING,  &color7 },
+		{ "color8",             STRING,  &color8 },
+		{ "color9",             STRING,  &color9 },
+		{ "color10",            STRING,  &color10 },
+		{ "color11",            STRING,  &color11 },
+		{ "color12",            STRING,  &color12 },
+		{ "color13",            STRING,  &color13 },
+		{ "color14",            STRING,  &color14 },
+		{ "color15",            STRING,  &color15 },
 		{ "mfact",              FLOAT,   &mfact },
 		{ "nmaster",            INTEGER, &nmaster },
 		{ "resizehints",        INTEGER, &resizehints },
@@ -160,12 +213,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_minus,        spawn,          SHCMD("pamixer --allow-boost -d 15" /* "; kill -44 $(pidof dwmblocks)" */) },
 	{ MODKEY,                       XK_equal,        spawn,          SHCMD("pamixer --allow-boost -i 5" /* "; kill -44 $(pidof dwmblocks)" */) },
 	{ MODKEY|ShiftMask,             XK_equal,        spawn,          SHCMD("pamixer --allow-boost -i 15" /* "; kill -44 $(pidof dwmblocks)" */) },
-	{ MODKEY,                       XK_BackSpace,    spawn,          SHCMD("sysact") },
-	{ MODKEY|ShiftMask,             XK_BackSpace,    spawn,          SHCMD("sysact") },
+	{ MODKEY,                       XK_BackSpace,    spawn,          SHCMD("sysact -n 2") },
+	{ MODKEY|ShiftMask,             XK_BackSpace,    spawn,          SHCMD("sysact -n 3") },
 
 	{ MODKEY,                       XK_Tab,          shiftview,      {.i = +1 } },
 	{ MODKEY,                       XK_q,            killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_q,            spawn,          SHCMD("sysact") },
+	{ MODKEY|ShiftMask,             XK_q,            spawn,          SHCMD("sysact -n 6") },
 	{ MODKEY,                       XK_w,            spawn,          SHCMD("$BROWSER") },
 	// { MODKEY,                    XK_e,            spawn,          SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
 	// { MODKEY|ShiftMask,          XK_e,            spawn,          SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
@@ -199,6 +252,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_j,            focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,            focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_l,            setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_l,            spawn,          SHCMD("sysact -n 1") },
 	{ MODKEY,                       XK_semicolon,    togglescratch,  {.ui = 0} },
 	{ MODKEY,                       XK_apostrophe,   togglescratch,  {.ui = 1} },
 	{ MODKEY,                       XK_Return,       spawn,          {.v = termcmd } },
@@ -262,7 +316,7 @@ static Key keys[] = {
 	{ 0,                   XF86XK_AudioForward,      spawn,          SHCMD("playerctl position 10+ || mpc seek +10") },
 	{ 0,                   XF86XK_AudioMedia,        spawn,          SHCMD("spotify") },
 	{ 0,                   XF86XK_AudioMicMute,      spawn,          SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle") },
-	{ 0,                   XF86XK_PowerOff,          spawn,          SHCMD("sysact") },
+	{ 0,                   XF86XK_PowerOff,          spawn,          SHCMD("sysact -n 2") },
 	{ 0,                   XF86XK_Calculator,        togglescratch,  {.ui = 1} },
 	{ 0,                   XF86XK_DOS,               spawn,          SHCMD(TERMINAL) },
 	{ 0,                   XF86XK_Sleep,             spawn,          SHCMD("syssleep") },
@@ -283,10 +337,12 @@ static Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */
-	// { ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
+	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	// { ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	// { ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button1,        sigdwmblocks,   {.i = 1} },
+	{ ClkStatusText,        0,              Button2,        sigdwmblocks,   {.i = 2} },
+	{ ClkStatusText,        0,              Button3,        sigdwmblocks,   {.i = 3} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        defaultgaps,    {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
