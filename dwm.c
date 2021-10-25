@@ -583,9 +583,9 @@ buttonpress(XEvent *e)
 				occ |= c->tags == 255 ? 0 : c->tags;
 			do {
 				/* do not reserve space for vacant tags */
-				if (!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
+				if (!(occ & 1 << ++i || m->tagset[m->seltags] & 1 << i))
 					continue;
-				x += TEXTW(tags[++i]);
+				x += TEXTW(tags[i]);
 			} while (x <= 0);
 			click = ClkTagBar;
 			arg.ui = 1 << i;
