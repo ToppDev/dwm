@@ -5,51 +5,51 @@
 #define TERMCLASS "St"
 
 /* appearance */
-static unsigned int borderpx  = 3;             /* border pixel of windows */
-static unsigned int snap      = 32;            /* snap pixel */
-static unsigned int gappih    = 20;            /* horiz inner gap between windows */
-static unsigned int gappiv    = 10;            /* vert inner gap between windows */
-static unsigned int gappoh    = 10;            /* horiz outer gap between windows and screen edge */
-static unsigned int gappov    = 30;            /* vert outer gap between windows and screen edge */
-static int smartgaps          = 0;             /* 1 means no outer gap when there is only one window */
-static unsigned int systraypinning = 0;        /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static unsigned int systrayonleft  = 0;        /* 0: systray in the right corner, >0: systray on left of status text */
-static unsigned int systrayspacing = 2;        /* systray spacing */
-static const int systraypinningfailfirst = 1;  /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static int showsystray        = 1;             /* 0 means no systray */
-static int swallowfloating    = 0;             /* 1 means swallow floating windows by default */
-static int showbar            = 1;             /* 0 means no bar */
-static int topbar             = 1;             /* 0 means bottom bar */
-static int viewontag          = 1;             /* Switch view on tag switch */
-static char *fonts[]          = { "monospace:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
-static char normbgcolor[]     = "#222222";
-static char normbordercolor[] = "#444444";
-static char normfgcolor[]     = "#bbbbbb";
-static char selfgcolor[]      = "#eeeeee";
-static char selbordercolor[]  = "#770000";
-static char selbgcolor[]      = "#005577";
-static char color0[]          = "#000000"; /* black  dark  */
-static char color8[]          = "#79A9FF"; /* black  light */
-static char color1[]          = "#ff5555"; /* red    dark  */
-static char color9[]          = "#ff6e67"; /* red    light */
-static char color2[]          = "#50fa7b"; /* green  dark  */
-static char color10[]         = "#5af78e"; /* green  light */
-static char color3[]          = "#f1fa8c"; /* yellow dark  */
-static char color11[]         = "#f4f99d"; /* yellow light */
-static char color4[]          = "#6790EB"; /* blue   dark  */
-static char color12[]         = "#79A9FF"; /* blue   light */
-static char color5[]          = "#ff79c6"; /* purple dark  */
-static char color13[]         = "#ff92d0"; /* purple light */
-static char color6[]          = "#8be9fd"; /* cyan   dark  */
-static char color14[]         = "#9aedfe"; /* cyan   light */
-static char color7[]          = "#bfbfbf"; /* white  dark  */
-static char color15[]         = "#e6e6e6"; /* white  light */
+static const unsigned int borderpx  = 3;         /* border pixel of windows */
+static const unsigned int snap      = 32;        /* snap pixel */
+static const unsigned int gappih    = 20;        /* horiz inner gap between windows */
+static const unsigned int gappiv    = 10;        /* vert inner gap between windows */
+static const unsigned int gappoh    = 10;        /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 30;        /* vert outer gap between windows and screen edge */
+static const int smartgaps          = 0;         /* 1 means no outer gap when there is only one window */
+static const unsigned int systraypinning = 0;    /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayonleft  = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
+static const unsigned int systrayspacing = 2;    /* systray spacing */
+static const int systraypinningfailfirst = 1;    /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
+static const int showsystray        = 1;         /* 0 means no systray */
+static const int swallowfloating    = 0;         /* 1 means swallow floating windows by default */
+static const int showbar            = 1;         /* 0 means no bar */
+static const int topbar             = 1;         /* 0 means bottom bar */
+static const int viewontag          = 1;         /* Switch view on tag switch */
+static const char *fonts[]          = { "Inconsolata Nerd Font:size=12", "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
+static const char normbgcolor[]     = "#222222";
+static const char normbordercolor[] = "#444444";
+static const char normfgcolor[]     = "#bbbbbb";
+static const char selfgcolor[]      = "#eeeeee";
+static const char selbordercolor[]  = "#770000";
+static const char selbgcolor[]      = "#005577";
+static const char color0[]          = "#000000"; /* black  dark  */
+static const char color8[]          = "#79A9FF"; /* black  light */
+static const char color1[]          = "#ff5555"; /* red    dark  */
+static const char color9[]          = "#ff6e67"; /* red    light */
+static const char color2[]          = "#50fa7b"; /* green  dark  */
+static const char color10[]         = "#5af78e"; /* green  light */
+static const char color3[]          = "#f1fa8c"; /* yellow dark  */
+static const char color11[]         = "#f4f99d"; /* yellow light */
+static const char color4[]          = "#6790EB"; /* blue   dark  */
+static const char color12[]         = "#79A9FF"; /* blue   light */
+static const char color5[]          = "#ff79c6"; /* purple dark  */
+static const char color13[]         = "#ff92d0"; /* purple light */
+static const char color6[]          = "#8be9fd"; /* cyan   dark  */
+static const char color14[]         = "#9aedfe"; /* cyan   light */
+static const char color7[]          = "#bfbfbf"; /* white  dark  */
+static const char color15[]         = "#e6e6e6"; /* white  light */
 
 enum { SchemeNorm,  SchemeCol0,  SchemeCol1,  SchemeCol2,  SchemeCol3,  SchemeCol4,
        SchemeCol5,  SchemeCol6,  SchemeCol7,  SchemeCol8,  SchemeCol9,  SchemeCol10,
        SchemeCol11, SchemeCol12, SchemeCol13, SchemeCol14, SchemeCol15, SchemeSel }; /* color schemes */
 
-static char *colors[][3]      = {
+static const char *colors[][3]      = {
 	/*               fg           bg           border   */
 	[SchemeNorm]  = { normfgcolor, normbgcolor, normbordercolor }, // \x0b
 	[SchemeCol0]  = { color0,      normbgcolor, normbordercolor }, // \x0c
@@ -107,10 +107,10 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static float mfact     = 0.55;       /* factor of master area size [0.05..0.95] */
-static int nmaster     = 1;          /* number of clients in master area */
-static int resizehints = 0;          /* 1 means respect size hints in tiled resizals */
-static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+static const float mfact        = 0.55; /* factor of master area size [0.05..0.95] */
+static const int nmaster        = 1;    /* number of clients in master area */
+static const int resizehints    = 0;    /* 1 means respect size hints in tiled resizals */
+static const int lockfullscreen = 1;    /* 1 will force focus on the fullscreen window */
 #include "vanitygaps.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -143,53 +143,6 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *termcmd[]  = { TERMINAL, NULL };
-
-/*
- * Xresources preferences to load at startup
- */
-ResourcePref resources[] = {
-		{ "borderpx",           INTEGER, &borderpx },
-		{ "snap",               INTEGER, &snap },
-		{ "gappih",             INTEGER, &gappih },
-		{ "gappiv",             INTEGER, &gappiv },
-		{ "gappoh",             INTEGER, &gappoh },
-		{ "gappov",             INTEGER, &gappov },
-		{ "smartgaps",          INTEGER, &smartgaps },
-		{ "systraypinning",     INTEGER, &systraypinning },
-		{ "systrayonleft",      INTEGER, &systrayonleft },
-		{ "systrayspacing",     INTEGER, &systrayspacing },
-		{ "showsystray",        INTEGER, &showsystray },
-		{ "swallowfloating",    INTEGER, &swallowfloating },
-		{ "showbar",            INTEGER, &showbar },
-		{ "topbar",             INTEGER, &topbar },
-		{ "viewontag",          INTEGER, &viewontag },
-		// { "font",               STRING,  &font },
-		// { "color0",             STRING,  &normbgcolor },
-		// { "color0",             STRING,  &normbordercolor },
-		// { "color4",             STRING,  &normfgcolor },
-		// { "color0",             STRING,  &selfgcolor },
-		// { "color8",             STRING,  &selbordercolor },
-		// { "color4",             STRING,  &selbgcolor },
-		{ "color0",             STRING,  &color0 },
-		{ "color1",             STRING,  &color1 },
-		{ "color2",             STRING,  &color2 },
-		{ "color3",             STRING,  &color3 },
-		{ "color4",             STRING,  &color4 },
-		{ "color5",             STRING,  &color5 },
-		{ "color6",             STRING,  &color6 },
-		{ "color7",             STRING,  &color7 },
-		{ "color8",             STRING,  &color8 },
-		{ "color9",             STRING,  &color9 },
-		{ "color10",            STRING,  &color10 },
-		{ "color11",            STRING,  &color11 },
-		{ "color12",            STRING,  &color12 },
-		{ "color13",            STRING,  &color13 },
-		{ "color14",            STRING,  &color14 },
-		{ "color15",            STRING,  &color15 },
-		{ "mfact",              FLOAT,   &mfact },
-		{ "nmaster",            INTEGER, &nmaster },
-		{ "resizehints",        INTEGER, &resizehints },
-};
 
 #include <X11/XF86keysym.h>
 #include "shiftview.c"

@@ -40,7 +40,6 @@ sudo make clean install
 - [swallow](https://dwm.suckless.org/patches/swallow/)
 - [systray](https://dwm.suckless.org/patches/systray/)
 - [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/)
-- [Xresources](https://dwm.suckless.org/patches/xresources/)
 - [viewontag](https://dwm.suckless.org/patches/viewontag/)
 - [restartsig](https://dwm.suckless.org/patches/restartsig/)
 - [shiftview](https://lists.suckless.org/dev/1104/7590.html)
