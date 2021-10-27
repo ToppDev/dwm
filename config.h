@@ -21,54 +21,42 @@ static const int swallowfloating    = 0;         /* 1 means swallow floating win
 static const int showbar            = 1;         /* 0 means no bar */
 static const int topbar             = 1;         /* 0 means bottom bar */
 static const int viewontag          = 1;         /* Switch view on tag switch */
-static const char *fonts[]          = { "Inconsolata Nerd Font:size=12", "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
+static const char *fonts[]          = { "Inconsolata Nerd Font:size=13", "JoyPixels:pixelsize=12:antialias=true:autohint=true" };
 static const char normbgcolor[]     = "#222222";
 static const char normbordercolor[] = "#444444";
 static const char normfgcolor[]     = "#bbbbbb";
 static const char selfgcolor[]      = "#eeeeee";
 static const char selbordercolor[]  = "#770000";
 static const char selbgcolor[]      = "#005577";
-static const char color0[]          = "#000000"; /* black  dark  */
-static const char color8[]          = "#79A9FF"; /* black  light */
-static const char color1[]          = "#ff5555"; /* red    dark  */
-static const char color9[]          = "#ff6e67"; /* red    light */
-static const char color2[]          = "#50fa7b"; /* green  dark  */
-static const char color10[]         = "#5af78e"; /* green  light */
-static const char color3[]          = "#f1fa8c"; /* yellow dark  */
-static const char color11[]         = "#f4f99d"; /* yellow light */
-static const char color4[]          = "#6790EB"; /* blue   dark  */
-static const char color12[]         = "#79A9FF"; /* blue   light */
-static const char color5[]          = "#ff79c6"; /* purple dark  */
-static const char color13[]         = "#ff92d0"; /* purple light */
-static const char color6[]          = "#8be9fd"; /* cyan   dark  */
-static const char color14[]         = "#9aedfe"; /* cyan   light */
-static const char color7[]          = "#bfbfbf"; /* white  dark  */
-static const char color15[]         = "#e6e6e6"; /* white  light */
 
-enum { SchemeNorm,  SchemeCol0,  SchemeCol1,  SchemeCol2,  SchemeCol3,  SchemeCol4,
-       SchemeCol5,  SchemeCol6,  SchemeCol7,  SchemeCol8,  SchemeCol9,  SchemeCol10,
-       SchemeCol11, SchemeCol12, SchemeCol13, SchemeCol14, SchemeCol15, SchemeSel }; /* color schemes */
+enum { SchemeNorm,  SchemeSel,   SchemeCol0,  SchemeCol1,  SchemeCol2,  SchemeCol3,
+       SchemeCol4,  SchemeCol5,  SchemeCol6,  SchemeCol7,  SchemeCol8,  SchemeCol9,
+       SchemeCol10, SchemeCol11, SchemeCol12, SchemeCol13, SchemeCol14, SchemeCol15,
+       SchemeCol16, SchemeCol17, SchemeCol18  }; /* color schemes */
 
 static const char *colors[][3]      = {
-	/*               fg           bg           border   */
+	/*               fg            bg           border   */
 	[SchemeNorm]  = { normfgcolor, normbgcolor, normbordercolor }, // \x0b
-	[SchemeCol0]  = { color0,      normbgcolor, normbordercolor }, // \x0c
-	[SchemeCol1]  = { color1,      normbgcolor, normbordercolor }, // \x0d
-	[SchemeCol2]  = { color2,      normbgcolor, normbordercolor }, // \x0e
-	[SchemeCol3]  = { color3,      normbgcolor, normbordercolor }, // \x0f
-	[SchemeCol4]  = { color4,      normbgcolor, normbordercolor }, // \x10
-	[SchemeCol5]  = { color5,      normbgcolor, normbordercolor }, // \x11
-	[SchemeCol6]  = { color6,      normbgcolor, normbordercolor }, // \x12
-	[SchemeCol7]  = { color7,      normbgcolor, normbordercolor }, // \x13
-	[SchemeCol8]  = { color8,      normbgcolor, normbordercolor }, // \x14
-	[SchemeCol9]  = { color9,      normbgcolor, normbordercolor }, // \x15
-	[SchemeCol10] = { color10,     normbgcolor, normbordercolor }, // \x16
-	[SchemeCol11] = { color11,     normbgcolor, normbordercolor }, // \x17
-	[SchemeCol12] = { color12,     normbgcolor, normbordercolor }, // \x18
-	[SchemeCol13] = { color13,     normbgcolor, normbordercolor }, // \x19
-	[SchemeCol14] = { color14,     normbgcolor, normbordercolor }, // \x1a
-	[SchemeCol15] = { color15,     normbgcolor, normbordercolor }, // \x1b
-	[SchemeSel]   = { selfgcolor,  selbgcolor,  selbordercolor  }, // \x1c
+	[SchemeSel]   = { selfgcolor,  selbgcolor,  selbordercolor  }, // \x0c
+	[SchemeCol0]  = { "#000000",   normbgcolor, normbordercolor }, // \x0d - black
+	[SchemeCol1]  = { "#800000",   normbgcolor, normbordercolor }, // \x0e - maroon
+	[SchemeCol2]  = { "#008000",   normbgcolor, normbordercolor }, // \x0f - green
+	[SchemeCol3]  = { "#808000",   normbgcolor, normbordercolor }, // \x10 - olive
+	[SchemeCol4]  = { "#000080",   normbgcolor, normbordercolor }, // \x11 - navy
+	[SchemeCol5]  = { "#800080",   normbgcolor, normbordercolor }, // \x12 - purple
+	[SchemeCol6]  = { "#008080",   normbgcolor, normbordercolor }, // \x13 - teal
+	[SchemeCol7]  = { "#C0C0C0",   normbgcolor, normbordercolor }, // \x14 - silver
+	[SchemeCol8]  = { "#808080",   normbgcolor, normbordercolor }, // \x15 - gray
+	[SchemeCol9]  = { "#FF0000",   normbgcolor, normbordercolor }, // \x16 - red
+	[SchemeCol10] = { "#00FF00",   normbgcolor, normbordercolor }, // \x17 - lime
+	[SchemeCol11] = { "#FFFF00",   normbgcolor, normbordercolor }, // \x18 - yellow
+	[SchemeCol12] = { "#0000FF",   normbgcolor, normbordercolor }, // \x19 - blue
+	[SchemeCol13] = { "#FF00FF",   normbgcolor, normbordercolor }, // \x1a - magenta
+	[SchemeCol14] = { "#00FFFF",   normbgcolor, normbordercolor }, // \x1b - cyan
+	[SchemeCol15] = { "#FFFFFF",   normbgcolor, normbordercolor }, // \x1c - white
+	[SchemeCol16] = { "#FFA500",   normbgcolor, normbordercolor }, // \x1d - orange
+	[SchemeCol17] = { "#FF6347",   normbgcolor, normbordercolor }, // \x1e - tomato
+	[SchemeCol18] = { "#adff2f",   normbgcolor, normbordercolor }, // \x1f - lightsalmon
 };
 
 typedef struct {
