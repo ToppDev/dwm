@@ -21,7 +21,7 @@ static const int swallowfloating    = 0;         /* 1 means swallow floating win
 static const int showbar            = 1;         /* 0 means no bar */
 static const int topbar             = 1;         /* 0 means bottom bar */
 static const int viewontag          = 1;         /* Switch view on tag switch */
-static const char *fonts[]          = { "Inconsolata Nerd Font:size=13", "JoyPixels:pixelsize=12:antialias=true:autohint=true" };
+static const char *fonts[]          = { "Inconsolata Nerd Font:size=13", "JoyPixels:pixelsize=13:antialias=true:autohint=true" };
 static const char normbgcolor[]     = "#222222";
 static const char normbordercolor[] = "#444444";
 static const char normfgcolor[]     = "#bbbbbb";
