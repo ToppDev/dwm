@@ -150,10 +150,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                            8)
 	{ MODKEY,                       XK_0,            view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,            tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_minus,        spawn,          SHCMD("volume --allow-boost -d 5" /* "; kill -44 $(pidof dwmblocks)" */) },
-	{ MODKEY|ShiftMask,             XK_minus,        spawn,          SHCMD("volume --allow-boost -d 15" /* "; kill -44 $(pidof dwmblocks)" */) },
-	{ MODKEY,                       XK_equal,        spawn,          SHCMD("volume --allow-boost -i 5" /* "; kill -44 $(pidof dwmblocks)" */) },
-	{ MODKEY|ShiftMask,             XK_equal,        spawn,          SHCMD("volume --allow-boost -i 15" /* "; kill -44 $(pidof dwmblocks)" */) },
+	{ MODKEY,                       XK_minus,        spawn,          SHCMD("volume --allow-boost -d 5") },
+	{ MODKEY|ShiftMask,             XK_minus,        spawn,          SHCMD("volume --allow-boost -d 15") },
+	{ MODKEY,                       XK_equal,        spawn,          SHCMD("volume --allow-boost -i 5") },
+	{ MODKEY|ShiftMask,             XK_equal,        spawn,          SHCMD("volume --allow-boost -i 15") },
 	{ MODKEY,                       XK_BackSpace,    spawn,          SHCMD("sysact -n 2") },
 	{ MODKEY|ShiftMask,             XK_BackSpace,    spawn,          SHCMD("sysact -n 3") },
 
@@ -245,9 +245,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Scroll_Lock,  spawn,          SHCMD("killall screenkey || screenkey &") },
 	// { MODKEY,                    XK_Pause,        spawn,          SHCMD("") },
 
-	{ 0,                   XF86XK_AudioMute,         spawn,          SHCMD("volume --toggle-mute" /* "; kill -44 $(pidof dwmblocks)" */) },
-	{ 0,                   XF86XK_AudioRaiseVolume,  spawn,          SHCMD("volume --allow-boost -i 3" /* "; kill -44 $(pidof dwmblocks)" */) },
-	{ 0,                   XF86XK_AudioLowerVolume,  spawn,          SHCMD("volume --allow-boost -d 3" /* "; kill -44 $(pidof dwmblocks)" */) },
+	{ 0,                   XF86XK_AudioMute,         spawn,          SHCMD("volume --toggle-mute") },
+	{ 0,                   XF86XK_AudioRaiseVolume,  spawn,          SHCMD("volume --allow-boost -i 3") },
+	{ 0,                   XF86XK_AudioLowerVolume,  spawn,          SHCMD("volume --allow-boost -d 3") },
 	{ 0,                   XF86XK_AudioPrev,         spawn,          SHCMD("playerctl previous || mpc prev") },
 	{ 0,                   XF86XK_AudioNext,         spawn,          SHCMD("playerctl next || mpc next") },
 	{ 0,                   XF86XK_AudioPause,        spawn,          SHCMD("playerctl play-pause || mpc toggle") },
@@ -284,9 +284,9 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,              Button1,        sigdwmblocks,   {.i = 1} },
 	{ ClkStatusText,        0,              Button2,        sigdwmblocks,   {.i = 2} },
 	{ ClkStatusText,        0,              Button3,        sigdwmblocks,   {.i = 3} },
-	{ ClkStatusText,        ShiftMask,      Button1,        sigdwmblocks,   {.i = 4} },
-	{ ClkStatusText,        ShiftMask,      Button2,        sigdwmblocks,   {.i = 5} },
-	{ ClkStatusText,        ShiftMask,      Button3,        sigdwmblocks,   {.i = 6} },
+	{ ClkStatusText,        0,              Button4,        sigdwmblocks,   {.i = 4} }, // Mouse wheel up
+	{ ClkStatusText,        0,              Button5,        sigdwmblocks,   {.i = 5} }, // Mouse wheel down
+	{ ClkStatusText,        ShiftMask,      Button1,        sigdwmblocks,   {.i = 6} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        defaultgaps,    {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
