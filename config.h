@@ -161,17 +161,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_q,            killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_q,            spawn,          SHCMD("sysact -n 6") },
 	{ MODKEY,                       XK_w,            spawn,          SHCMD("$BROWSER") },
-	// { MODKEY,                    XK_e,            spawn,          SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
-	// { MODKEY|ShiftMask,          XK_e,            spawn,          SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
+	{ MODKEY,                       XK_e,            spawn,          SHCMD("thunderbird") },
 	{ MODKEY,                       XK_r,            spawn,          SHCMD(TERMINAL " -e htop") },
 	{ MODKEY,                       XK_t,            setlayout,      {.v = &layouts[0]} }, /* tile */
-	{ MODKEY|ShiftMask,             XK_t,            setlayout,      {.v = &layouts[1]} }, /* bstack */
-	{ MODKEY,                       XK_y,            setlayout,      {.v = &layouts[2]} }, /* spiral */
-	{ MODKEY|ShiftMask,             XK_y,            setlayout,      {.v = &layouts[3]} }, /* dwindle */
-	{ MODKEY,                       XK_u,            setlayout,      {.v = &layouts[4]} }, /* deck */
-	{ MODKEY|ShiftMask,             XK_u,            setlayout,      {.v = &layouts[5]} }, /* monocle */
-	{ MODKEY,                       XK_i,            setlayout,      {.v = &layouts[6]} }, /* centeredmaster */
-	{ MODKEY|ShiftMask,             XK_i,            setlayout,      {.v = &layouts[7]} }, /* centeredfloatingmaster */
+	// { MODKEY,                    XK_y,            spawn,          SHCMD("") },
+	// { MODKEY,                    XK_u,            spawn,          SHCMD("") },
+	// { MODKEY,                    XK_i,            spawn,          SHCMD("") },
 	{ MODKEY,                       XK_o,            incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_o,            incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_p,            spawn,          SHCMD("playerctl play-pause || mpc toggle") },
