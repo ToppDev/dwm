@@ -943,7 +943,8 @@ drawbar(Monitor *m)
 		char *stp = stextc;
 		char tmp;
 
-		wsbar = wbar;
+		if (m == selmon)
+			wsbar = wbar;
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		x = wbar - wstext;
 		drw_rect(drw, x, 0, LSPAD, bh, 1, 1); x += LSPAD; /* to keep left padding clean */
@@ -989,7 +990,8 @@ drawbar(Monitor *m)
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
 	if (m == selmon || 1) {
-		blw = w, ble = x;
+		if (m == selmon)
+			blw = w, ble = x;
 		w = wbar - wstext - x;
 	} else
 		w = wbar - x;
