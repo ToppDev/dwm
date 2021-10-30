@@ -165,7 +165,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,            spawn,          SHCMD(TERMINAL " -e htop") },
 	{ MODKEY,                       XK_t,            setlayout,      {.v = &layouts[0]} }, /* tile */
 	// { MODKEY,                    XK_y,            spawn,          SHCMD("") },
-	// { MODKEY,                    XK_u,            spawn,          SHCMD("") },
+	{ MODKEY,                       XK_u,            spawn,          SHCMD("checkpacupdate") },
 	// { MODKEY,                    XK_i,            spawn,          SHCMD("") },
 	{ MODKEY,                       XK_o,            incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_o,            incnmaster,     {.i = -1 } },
