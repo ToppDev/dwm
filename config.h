@@ -264,8 +264,8 @@ static Key keys[] = {
 	{ 0,                   XF86XK_MyComputer,        spawn,          SHCMD("thunar") },
 	// { 0,                   XF86XK_Battery,           spawn,          SHCMD("") },
 	{ 0,                   XF86XK_TouchpadToggle,    spawn,          SHCMD("touchpadtoggle") },
-	{ 0,                   XF86XK_MonBrightnessUp,   spawn,          SHCMD("xbacklight -inc 15") },
-	{ 0,                   XF86XK_MonBrightnessDown, spawn,          SHCMD("xbacklight -dec 15") },
+	{ 0,                   XF86XK_MonBrightnessUp,   spawn,          SHCMD("backlight -inc 15") },
+	{ 0,                   XF86XK_MonBrightnessDown, spawn,          SHCMD("backlight -dec 15") },
 
 };
 
