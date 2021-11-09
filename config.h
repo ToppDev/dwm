@@ -79,19 +79,21 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class             instance     title                       tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Xfce4-appfinder", NULL,        NULL,                       0,         1,          0,           0,        -1 },
-	{ "keepassxc",       NULL,        NULL,                       0,         1,          0,           0,        -1 },
-	{ "Peek",            NULL,        NULL,                       0,         1,          0,           0,        -1 },
-	{ NULL,              NULL,        "Copying",                  0,         1,          0,           0,        -1 },
-	{ NULL,              NULL,        "Deleting",                 0,         1,          0,           0,        -1 },
-	{ NULL,              NULL,        "Moving",                   0,         1,          0,           0,        -1 },
-	{ NULL,              NULL,        "File Operation Progress",  0,         1,          0,           0,        -1 },
-	{ NULL,              NULL,        "Save File",                0,         1,          0,           0,        -1 },
-	{ TERMCLASS,         NULL,        NULL,                       0,         0,          1,           0,        -1 },
-	{ NULL,              NULL,        "Event Tester",             0,         0,          0,           1,        -1 }, /* xev */
-	{ NULL,              "spterm",    NULL,                       SPTAG(0),  1,          1,           0,        -1 },
-	{ NULL,              "spcalc",    NULL,                       SPTAG(1),  1,          0,           0,        -1 },
+	/* class                    instance     title                       tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "Xfce4-appfinder",        NULL,        NULL,                       0,         1,          0,           0,        -1 },
+	{ "Xfce4-display-settings", NULL,        NULL,                       0,         1,          0,           0,        -1 },
+	{ "Xfce4-settings-manager", NULL,        NULL,                       0,         1,          0,           0,        -1 },
+	{ "keepassxc",              NULL,        NULL,                       0,         1,          0,           0,        -1 },
+	{ "Peek",                   NULL,        NULL,                       0,         1,          0,           0,        -1 },
+	{ NULL,                     NULL,        "Copying",                  0,         1,          0,           0,        -1 },
+	{ NULL,                     NULL,        "Deleting",                 0,         1,          0,           0,        -1 },
+	{ NULL,                     NULL,        "Moving",                   0,         1,          0,           0,        -1 },
+	{ NULL,                     NULL,        "File Operation Progress",  0,         1,          0,           0,        -1 },
+	{ NULL,                     NULL,        "Save File",                0,         1,          0,           0,        -1 },
+	{ TERMCLASS,                NULL,        NULL,                       0,         0,          1,           0,        -1 },
+	{ NULL,                     NULL,        "Event Tester",             0,         0,          0,           1,        -1 }, /* xev */
+	{ NULL,                     "spterm",    NULL,                       SPTAG(0),  1,          1,           0,        -1 },
+	{ NULL,                     "spcalc",    NULL,                       SPTAG(1),  1,          0,           0,        -1 },
 };
 
 /* layout(s) */
@@ -234,7 +236,7 @@ static Key keys[] = {
 	// { MODKEY,                    XK_F9,           spawn,          SHCMD("") },
 	// { MODKEY,                    XK_F10,          spawn,          SHCMD("") },
 	// { MODKEY,                    XK_F11,          spawn,          SHCMD("") },
-	{ MODKEY,                       XK_F12,          spawn,          SHCMD("displayselect") },
+	{ MODKEY,                       XK_F12,          spawn,          SHCMD("xfce4-display-settings") },
 
 	{ 0,                            XK_Print,        spawn,          SHCMD("flameshot gui") },
 	{ MODKEY,                       XK_Scroll_Lock,  spawn,          SHCMD("killall screenkey || screenkey &") },
