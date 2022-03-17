@@ -85,6 +85,7 @@ static const Rule rules[] = {
 	{ "Xfce4-settings-manager", NULL,        NULL,                       0,         1,          0,           0,        -1 },
 	{ "keepassxc",              NULL,        NULL,                       0,         1,          0,           0,        -1 },
 	{ "Peek",                   NULL,        NULL,                       0,         1,          0,           0,        -1 },
+	{ "Evolution-alarm-notify", NULL,        NULL,                       0,         1,          0,           0,        -1 },
 	{ NULL,                     NULL,        "Copying",                  0,         1,          0,           0,        -1 },
 	{ NULL,                     NULL,        "Deleting",                 0,         1,          0,           0,        -1 },
 	{ NULL,                     NULL,        "Moving",                   0,         1,          0,           0,        -1 },
