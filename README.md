@@ -37,7 +37,6 @@ sudo make clean install
 - [scratchpads](https://dwm.suckless.org/patches/scratchpads/)
 - [statusallmons](https://dwm.suckless.org/patches/statusallmons/)
 - [sticky](https://dwm.suckless.org/patches/sticky/)
-- [swallow](https://dwm.suckless.org/patches/swallow/)
 - [systray](https://dwm.suckless.org/patches/systray/)
 - [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/)
 - [viewontag](https://dwm.suckless.org/patches/viewontag/)

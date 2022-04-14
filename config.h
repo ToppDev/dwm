@@ -17,7 +17,6 @@ static const unsigned int systrayonleft  = 0;    /* 0: systray in the right corn
 static const unsigned int systrayspacing = 2;    /* systray spacing */
 static const int systraypinningfailfirst = 1;    /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;         /* 0 means no systray */
-static const int swallowfloating    = 0;         /* 1 means swallow floating windows by default */
 static const int showbar            = 1;         /* 0 means no bar */
 static const int topbar             = 1;         /* 0 means bottom bar */
 static const int viewontag          = 1;         /* Switch view on tag switch */
@@ -79,22 +78,19 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                    instance     title                       tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Xfce4-appfinder",        NULL,        NULL,                       0,         1,          0,           0,        -1 },
-	{ "Xfce4-display-settings", NULL,        NULL,                       0,         1,          0,           0,        -1 },
-	{ "Xfce4-settings-manager", NULL,        NULL,                       0,         1,          0,           0,        -1 },
-	{ "keepassxc",              NULL,        NULL,                       0,         1,          0,           0,        -1 },
-	{ "Peek",                   NULL,        NULL,                       0,         1,          0,           0,        -1 },
-	{ "Evolution-alarm-notify", NULL,        NULL,                       0,         1,          0,           0,        -1 },
-	{ NULL,                     NULL,        "Copying",                  0,         1,          0,           0,        -1 },
-	{ NULL,                     NULL,        "Deleting",                 0,         1,          0,           0,        -1 },
-	{ NULL,                     NULL,        "Moving",                   0,         1,          0,           0,        -1 },
-	{ NULL,                     NULL,        "File Operation Progress",  0,         1,          0,           0,        -1 },
-	{ NULL,                     NULL,        "Save File",                0,         1,          0,           0,        -1 },
-	{ TERMCLASS,                NULL,        NULL,                       0,         0,          1,           0,        -1 },
-	{ NULL,                     NULL,        "Event Tester",             0,         0,          0,           1,        -1 }, /* xev */
-	{ NULL,                     "spterm",    NULL,                       SPTAG(0),  1,          1,           0,        -1 },
-	{ NULL,                     "spcalc",    NULL,                       SPTAG(1),  1,          0,           0,        -1 },
+	/* class                    instance     title                       tags mask  isfloating  monitor */
+	{ "Xfce4-appfinder",        NULL,        NULL,                       0,         1,          -1 },
+	{ "Xfce4-display-settings", NULL,        NULL,                       0,         1,          -1 },
+	{ "Xfce4-settings-manager", NULL,        NULL,                       0,         1,          -1 },
+	{ "keepassxc",              NULL,        NULL,                       0,         1,          -1 },
+	{ "Peek",                   NULL,        NULL,                       0,         1,          -1 },
+	{ NULL,                     NULL,        "Copying",                  0,         1,          -1 },
+	{ NULL,                     NULL,        "Deleting",                 0,         1,          -1 },
+	{ NULL,                     NULL,        "Moving",                   0,         1,          -1 },
+	{ NULL,                     NULL,        "File Operation Progress",  0,         1,          -1 },
+	{ NULL,                     NULL,        "Save File",                0,         1,          -1 },
+	{ NULL,                     "spterm",    NULL,                       SPTAG(0),  1,          -1 },
+	{ NULL,                     "spcalc",    NULL,                       SPTAG(1),  1,          -1 },
 };
 
 /* layout(s) */
