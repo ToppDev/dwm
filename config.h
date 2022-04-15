@@ -161,7 +161,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,            spawn,          SHCMD("sysact -n 6") },
 	{ MODKEY,                       XK_w,            spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_e,            spawn,          SHCMD("thunderbird") },
-	{ MODKEY,                       XK_r,            spawn,          SHCMD(TERMINAL " -e htop") },
+	{ MODKEY,                       XK_r,            spawn,          SHCMD(TERMINAL " -e btop") },
 	{ MODKEY,                       XK_t,            setlayout,      {.v = &layouts[0]} }, /* tile */
 	// { MODKEY,                    XK_y,            spawn,          SHCMD("") },
 	{ MODKEY,                       XK_u,            spawn,          SHCMD("checkpacupdate") },
@@ -190,7 +190,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,            setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_l,            spawn,          SHCMD("sysact -n 1") },
 	{ MODKEY,                       XK_semicolon,    togglescratch,  {.ui = 0} },
+	{ MODKEY,                       XK_odiaeresis,   togglescratch,  {.ui = 0} },
 	{ MODKEY,                       XK_apostrophe,   togglescratch,  {.ui = 1} },
+	{ MODKEY,                       XK_adiaeresis,   togglescratch,  {.ui = 1} },
 	{ MODKEY,                       XK_Return,       spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return,       spawn,          SHCMD("thunar") },
 
