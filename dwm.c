@@ -298,7 +298,7 @@ static char stextc[STATUSLENGTH];
 static char stexts[STATUSLENGTH];
 static int screen;
 static int sw, sh;           /* X display screen geometry width, height */
-static int bh, blw, ble;     /* bar geometry */
+static int bh, ble;          /* bar geometry */
 static int wsbar;            /* width of selmon bar */
 static int wstext;           /* width of status text */
 static int lrpad;            /* sum of left and right padding for text */
@@ -511,7 +511,7 @@ buttonpress(XEvent *e)
 		focus(NULL);
 	}
 	if (ev->window == selmon->barwin) {
-		if (ev->x < ble - blw) {
+		if (ev->x < ble - TEXTW(selmon->ltsymbol)) {
 			i = -1, x = -ev->x;
 			for (c = m->clients; c; c = c->next)
 				occ |= c->tags == 255 ? 0 : c->tags;
@@ -932,7 +932,7 @@ drawbar(Monitor *m)
 
 	if (m == selmon || 1) {
 		if (m == selmon)
-			blw = w, ble = x;
+			ble = x;
 		w = wbar - wstext - x;
 	} else
 		w = wbar - x;
