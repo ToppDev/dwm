@@ -135,7 +135,7 @@ static const char *termcmd[]  = { TERMINAL, NULL };
 #include <X11/XF86keysym.h>
 #include "shiftview.c"
 
-static Key keys[] = {
+static const Key keys[] = {
 	/* modifier                     key              function        argument */
 	// { MODKEY,                    XK_Escape,       spawn,          SHCMD("") },
 	{ MODKEY,                       XK_grave,        spawn,          SHCMD("dmenuunicode") },
@@ -274,7 +274,7 @@ static Key keys[] = {
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
-static Button buttons[] = {
+static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 	{ ClkLtSymbol,          0,              Button1,        cyclelayout,    {.i = +1 } },
 	{ ClkLtSymbol,          0,              Button3,        cyclelayout,    {.i = -1 } },
