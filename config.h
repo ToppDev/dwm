@@ -20,7 +20,7 @@ static const int showsystray        = 1;         /* 0 means no systray */
 static const int showbar            = 1;         /* 0 means no bar */
 static const int topbar             = 1;         /* 0 means bottom bar */
 static const int viewontag          = 1;         /* Switch view on tag switch */
-static const char *fonts[]          = { "Inconsolata Nerd Font:size=13", "JoyPixels:pixelsize=13:antialias=true:autohint=true" };
+static const char *fonts[]          = { "Fira Code Nerd Font:size=12", "JoyPixels:pixelsize=12:antialias=true:autohint=true" };
 static const char normbgcolor[]     = "#222222";
 static const char normbordercolor[] = "#444444";
 static const char normfgcolor[]     = "#bbbbbb";
@@ -137,7 +137,6 @@ static const char *termcmd[]  = { TERMINAL, NULL };
 
 static const Key keys[] = {
 	/* modifier                     key              function        argument */
-	// { MODKEY,                    XK_Escape,       spawn,          SHCMD("") },
 	{ MODKEY,                       XK_grave,        spawn,          SHCMD("dmenuunicode") },
 	TAGKEYS(                        XK_1,                            0)
 	TAGKEYS(                        XK_2,                            1)
@@ -150,41 +149,32 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                            8)
 	{ MODKEY,                       XK_0,            view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,            tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_minus,        spawn,          SHCMD("volume --allow-boost -d 5") },
-	{ MODKEY|ShiftMask,             XK_minus,        spawn,          SHCMD("volume --allow-boost -d 15") },
-	{ MODKEY,                       XK_equal,        spawn,          SHCMD("volume --allow-boost -i 5") },
-	{ MODKEY|ShiftMask,             XK_equal,        spawn,          SHCMD("volume --allow-boost -i 15") },
 	{ MODKEY,                       XK_BackSpace,    spawn,          SHCMD("sysact -n 2") },
 	{ MODKEY|ShiftMask,             XK_BackSpace,    spawn,          SHCMD("sysact -n 3") },
 
-	{ MODKEY,                       XK_Tab,          shiftview,      {.i = +1 } },
-	{ MODKEY,                       XK_q,            killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_q,            spawn,          SHCMD("sysact -n 6") },
-	{ MODKEY,                       XK_w,            spawn,          SHCMD("$BROWSER") },
-	{ MODKEY,                       XK_e,            spawn,          SHCMD("thunderbird") },
-	{ MODKEY,                       XK_r,            spawn,          SHCMD(TERMINAL " -e btop") },
-	{ MODKEY,                       XK_t,            setlayout,      {.v = &layouts[0]} }, /* tile */
-	// { MODKEY,                    XK_y,            spawn,          SHCMD("") },
-	{ MODKEY,                       XK_u,            spawn,          SHCMD("checkpacupdate") },
-	// { MODKEY,                    XK_i,            spawn,          SHCMD("") },
-	{ MODKEY,                       XK_o,            incnmaster,     {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_o,            incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_p,            spawn,          SHCMD("xfce4-display-settings --minimal") },
-	{ MODKEY|ShiftMask,             XK_p,            spawn,          SHCMD("playerctl play-pause || mpc toggle") },
-	{ MODKEY,                       XK_bracketleft,  spawn,          SHCMD("playerctl previous || mpc prev") },
-	{ MODKEY|ShiftMask,             XK_bracketleft,  spawn,          SHCMD("playerctl position 15- || mpc seek -15") },
-	{ MODKEY,                       XK_bracketright, spawn,          SHCMD("playerctl next || mpc next") },
-	{ MODKEY|ShiftMask,             XK_bracketright, spawn,          SHCMD("playerctl position 15+ || mpc seek +15") },
-	// { MODKEY,                    XK_backslash,    spawn,          SHCMD("") },
 
-	{ MODKEY,                       XK_a,            togglegaps,     {0} },
-	{ MODKEY|ShiftMask,             XK_a,            defaultgaps,    {0} },
+	{ MODKEY,                       XK_Tab,          shiftview,      {.i = +1 } },
+	TAGKEYS(                        XK_q,                            0)
+	TAGKEYS(                        XK_w,                            1)
+	TAGKEYS(                        XK_e,                            2)
+	TAGKEYS(                        XK_r,                            3)
+	TAGKEYS(                        XK_t,                            4)
+
+	TAGKEYS(                        XK_y,                            5)
+	TAGKEYS(                        XK_u,                            6)
+	TAGKEYS(                        XK_i,                            7)
+	TAGKEYS(                        XK_o,                            8)
+	{ MODKEY,                       XK_p,            view,           {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_p,            tag,            {.ui = ~0 } },
+
+
+	{ MODKEY,                       XK_a,            zoom,           {0} },
 	{ MODKEY,                       XK_s,            togglesticky,   {0} },
 	{ MODKEY,                       XK_d,            spawn,          SHCMD("j4-dmenu-desktop") },
 	{ MODKEY|ShiftMask,             XK_d,            spawn,          SHCMD("dmenu_run") },
 	{ MODKEY,                       XK_f,            togglefullscr,  {0} },
-	{ MODKEY|ShiftMask,             XK_f,            setlayout,      {.v = &layouts[8]} },
-	// { MODKEY,                    XK_g,            spawn,          SHCMD("") },
+	{ MODKEY,                       XK_g,            spawn,          SHCMD("$BROWSER") },
+
 	{ MODKEY,                       XK_h,            setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_j,            focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,            focusstack,     {.i = -1 } },
@@ -194,54 +184,38 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_odiaeresis,   togglescratch,  {.ui = 0} },
 	{ MODKEY,                       XK_apostrophe,   togglescratch,  {.ui = 1} },
 	{ MODKEY,                       XK_adiaeresis,   togglescratch,  {.ui = 1} },
-	{ MODKEY,                       XK_Return,       spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_Return,       spawn,          SHCMD("thunar") },
 
-	{ MODKEY,                       XK_z,            incrgaps,       {.i = +3 } },
-	{ MODKEY|ShiftMask,             XK_z,            incrgaps,       {.i = -3 } },
+	{ MODKEY,                       XK_z,            togglegaps,     {0} },
+	{ MODKEY|ShiftMask,             XK_z,            incrgaps,       {.i = +3 } },
+	{ MODKEY|ControlMask,           XK_z,            incrgaps,       {.i = -3 } },
+	{ MODKEY|ControlMask|ShiftMask, XK_z,            defaultgaps,    {0} },
 	{ MODKEY,                       XK_x,            spawn,          SHCMD("keepassxc") },
-	{ MODKEY,                       XK_c,            zoom,           {0} },
-	// { MODKEY,                    XK_v,            spawn,          SHCMD("") },
+	{ MODKEY,                       XK_c,            killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_c,            spawn,          SHCMD("xkill") },
+	{ MODKEY,                       XK_v,            togglefloating, {0} },
 	{ MODKEY,                       XK_b,            togglebar,      {0} },
-	{ MODKEY,                       XK_n,            spawn,          SHCMD("joplin-desktop") },
-	{ MODKEY,                       XK_m,            spawn,          SHCMD("spotify") },
-	{ MODKEY|ShiftMask,             XK_m,            spawn,          SHCMD("volume --toggle-mute" /* "; kill -44 $(pidof dwmblocks)" */) },
+
+	{ MODKEY,                       XK_n,            incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_n,            incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_m,            spawn,          SHCMD("xfce4-display-settings --minimal") },
 	{ MODKEY,                       XK_comma,        focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,        tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_period,       focusmon,       {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,       tagmon,         {.i = -1 } },
 
-	{ MODKEY,                       XK_space,        zoom,           {0} },
-	{ MODKEY|ShiftMask,             XK_space,        togglefloating, {0} },
+
+	{ MODKEY,                       XK_Return,       spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_Return,       spawn,          SHCMD("thunar") },
+	{ MODKEY,                       XK_space,        spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_space,        spawn,          SHCMD("thunar") },
+
+	{ 0,                            XK_Print,        spawn,          SHCMD("flameshot gui") },
 
 	{ MODKEY,                       XK_Left,         spawn,          SHCMD("variety --previous") },
 	{ MODKEY,                       XK_Right,        spawn,          SHCMD("variety --next") },
 	{ MODKEY|ShiftMask,             XK_Up,           spawn,          SHCMD("variety --move-to-favorites") },
 	{ MODKEY|ShiftMask,             XK_Down,         spawn,          SHCMD("variety --trash") },
 
-	// { MODKEY,                    XK_Insert,       spawn,          SHCMD("xdotool type $(grep -v '^#' ~/.local/share/talis/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
-	{ MODKEY,                       XK_Delete,       spawn,          SHCMD("xkill") },
-	// { MODKEY,                    XK_Home,         spawn,          SHCMD("") },
-	// { MODKEY,                    XK_End,          spawn,          SHCMD("") },
-	// { MODKEY,                    XK_Page_Up,      spawn,          SHCMD("") },
-	// { MODKEY,                    XK_Page_Down,    spawn,          SHCMD("") },
-
-	// { MODKEY,                    XK_F1,           spawn,          SHCMD("") },
-	// { MODKEY,                    XK_F2,           spawn,          SHCMD("") },
-	{ MODKEY,                       XK_F3,           spawn,          SHCMD("xfce4-appfinder") },
-	{ MODKEY,                       XK_F4,           spawn,          SHCMD("pavucontrol") },
-	// { MODKEY,                    XK_F5,           spawn,          SHCMD("") },
-	// { MODKEY,                    XK_F6,           spawn,          SHCMD("") },
-	// { MODKEY,                    XK_F7,           spawn,          SHCMD("") },
-	// { MODKEY,                    XK_F8,           spawn,          SHCMD("") },
-	// { MODKEY,                    XK_F9,           spawn,          SHCMD("") },
-	// { MODKEY,                    XK_F10,          spawn,          SHCMD("") },
-	// { MODKEY,                    XK_F11,          spawn,          SHCMD("") },
-	{ MODKEY,                       XK_F12,          spawn,          SHCMD("xfce4-display-settings") },
-
-	{ 0,                            XK_Print,        spawn,          SHCMD("flameshot gui") },
-	{ MODKEY,                       XK_Scroll_Lock,  spawn,          SHCMD("killall screenkey || screenkey &") },
-	// { MODKEY,                    XK_Pause,        spawn,          SHCMD("") },
 
 	{ 0,                   XF86XK_AudioMute,         spawn,          SHCMD("volume --toggle-mute") },
 	{ 0,                   XF86XK_AudioRaiseVolume,  spawn,          SHCMD("volume --allow-boost -i 3") },
@@ -265,7 +239,6 @@ static const Key keys[] = {
 	{ 0,                   XF86XK_TaskPane,          spawn,          SHCMD(TERMINAL " -e htop") },
 	{ 0,                   XF86XK_Mail,              spawn,          SHCMD("thunderbird") },
 	{ 0,                   XF86XK_MyComputer,        spawn,          SHCMD("thunar") },
-	// { 0,                   XF86XK_Battery,           spawn,          SHCMD("") },
 	{ 0,                   XF86XK_TouchpadToggle,    spawn,          SHCMD("touchpadtoggle") },
 	{ 0,                   XF86XK_MonBrightnessUp,   spawn,          SHCMD("backlight -inc 15") },
 	{ 0,                   XF86XK_MonBrightnessDown, spawn,          SHCMD("backlight -dec 15") },
