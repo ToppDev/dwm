@@ -168,12 +168,15 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,            tag,            {.ui = ~0 } },
 
 
-	{ MODKEY,                       XK_a,            zoom,           {0} },
+	{ MODKEY,                       XK_a,            spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_s,            togglesticky,   {0} },
 	{ MODKEY,                       XK_d,            spawn,          SHCMD("j4-dmenu-desktop") },
 	{ MODKEY|ShiftMask,             XK_d,            spawn,          SHCMD("dmenu_run") },
 	{ MODKEY,                       XK_f,            togglefullscr,  {0} },
-	{ MODKEY,                       XK_g,            spawn,          SHCMD("$BROWSER") },
+	{ MODKEY,                       XK_g,            togglegaps,     {0} },
+	{ MODKEY|ShiftMask,             XK_g,            incrgaps,       {.i = +3 } },
+	{ MODKEY|ControlMask,           XK_g,            incrgaps,       {.i = -3 } },
+	{ MODKEY|ControlMask|ShiftMask, XK_g,            defaultgaps,    {0} },
 
 	{ MODKEY,                       XK_h,            setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_j,            focusstack,     {.i = +1 } },
@@ -185,10 +188,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_apostrophe,   togglescratch,  {.ui = 1} },
 	{ MODKEY,                       XK_adiaeresis,   togglescratch,  {.ui = 1} },
 
-	{ MODKEY,                       XK_z,            togglegaps,     {0} },
-	{ MODKEY|ShiftMask,             XK_z,            incrgaps,       {.i = +3 } },
-	{ MODKEY|ControlMask,           XK_z,            incrgaps,       {.i = -3 } },
-	{ MODKEY|ControlMask|ShiftMask, XK_z,            defaultgaps,    {0} },
+	{ MODKEY,                       XK_z,            zoom,           {0} },
 	{ MODKEY,                       XK_x,            spawn,          SHCMD("keepassxc") },
 	{ MODKEY,                       XK_c,            killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_c,            spawn,          SHCMD("xkill") },
