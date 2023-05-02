@@ -85,6 +85,7 @@ static const Rule rules[] = {
 	{ "keepassxc",              NULL,        NULL,                       0,         1,          -1 },
 	{ "Peek",                   NULL,        NULL,                       0,         1,          -1 },
 	{ "flameshot",              NULL,        NULL,                       0,         1,          -1 },
+	{ "org.gnome.Characters",   NULL,        NULL,                       0,         1,          -1 },
 	{ NULL,                     NULL,        "Copying",                  0,         1,          -1 },
 	{ NULL,                     NULL,        "Deleting",                 0,         1,          -1 },
 	{ NULL,                     NULL,        "Moving",                   0,         1,          -1 },
@@ -137,7 +138,7 @@ static const char *termcmd[]  = { TERMINAL, NULL };
 
 static const Key keys[] = {
 	/* modifier                     key              function        argument */
-	{ MODKEY,                       XK_grave,        spawn,          SHCMD("dmenuunicode") },
+	{ MODKEY,                       XK_grave,        spawn,          SHCMD("gnome-characters") },
 	TAGKEYS(                        XK_1,                            0)
 	TAGKEYS(                        XK_2,                            1)
 	TAGKEYS(                        XK_3,                            2)
