@@ -63,7 +63,6 @@
 #define TTEXTW(X)               (drw_fontset_getwidth(drw, (X)))
 
 #define STATUSLENGTH            512
-#define DWMBLOCKSLOCKFILE       "/var/local/dwmblocks/dwmblocks.pid"
 #define DELIMITERENDCHAR        10
 #define LSPAD                   (lrpad / 2) /* padding on left side of status text */
 #define RSPAD                   (lrpad / 2) /* padding on right side of status text */
@@ -179,6 +178,8 @@ struct Systray {
 	Window win;
 	Client *icons;
 };
+
+static char DWMBLOCKSLOCKFILE[40];
 
 /* function declarations */
 static void applyrules(Client *c);
@@ -1867,6 +1868,9 @@ setup(void)
 
 	signal(SIGHUP, sighup);
 	signal(SIGTERM, sigterm);
+
+	/* init dwmblocks PID file */
+	sprintf(DWMBLOCKSLOCKFILE, "/var/run/user/%d/dwmblocks.pid", getuid());
 
 	/* init screen */
 	screen = DefaultScreen(dpy);
