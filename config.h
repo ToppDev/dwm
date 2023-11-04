@@ -78,8 +78,8 @@ const char *spcmd2[] = {TERMINAL,
                         "start",
                         "--class", "spcalc",
                         "--cwd", "/tmp",
-                        "--", "octaveclean", "--no-gui", "--silent", "--persist",
-                                             "--eval", "disp(['GNU Octave, version ' version]);\n", NULL };
+                        "--", "octave", "--no-gui", "--silent", "--persist",
+                                        "--eval", "disp(['GNU Octave, version ' version]);\n", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
     {"spterm",      spcmd1},
