@@ -1,8 +1,10 @@
 /* See LICENSE file for copyright and license details. */
 
 /* Constants */
-#define TERMINAL "st"
-#define TERMCLASS "St"
+// #define TERMINAL "st"
+// #define TERMCLASS "St"
+#define TERMINAL "wezterm"
+#define TERMCLASS "org.wezfurlong.wezterm"
 
 /* appearance */
 static const unsigned int borderpx  = 3;         /* border pixel of windows */
@@ -62,8 +64,21 @@ typedef struct {
     const char *name;
     const void *cmd;
 } Sp;
-const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-g", "120x34", NULL };
-const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-d", "/tmp", "-e", "octaveclean", "--no-gui", "--silent", "--persist", "--eval", "disp(['GNU Octave, version ' version]);\n", NULL };
+// const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-g", "120x34", NULL };
+// const char *spcmd2[] = {TERMINAL, "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-d", "/tmp", "-e", "octave", "--no-gui", "--silent", "--persist", "--eval", "disp(['GNU Octave, version ' version]);\n", NULL };
+const char *spcmd1[] = {TERMINAL,
+                        "--config", "initial_rows=28",
+                        "--config", "initial_cols=120",
+                        "start", "--class", "spterm", NULL };
+const char *spcmd2[] = {TERMINAL,
+                        "--config", "initial_rows=22",
+                        "--config", "initial_cols=64",
+                        "--config", "font_size=16",
+                        "start",
+                        "--class", "spcalc",
+                        "--cwd", "/tmp",
+                        "--", "octaveclean", "--no-gui", "--silent", "--persist",
+                                             "--eval", "disp(['GNU Octave, version ' version]);\n", NULL };
 static Sp scratchpads[] = {
     /* name          cmd  */
     {"spterm",      spcmd1},
