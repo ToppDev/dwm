@@ -179,16 +179,12 @@ static const Key keys[] = {
 
     { MODKEY,                       XK_p,            focusmon,       {.i = +1 } },
     { MODKEY|ShiftMask,             XK_p,            tagmon,         {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask, XK_p,            spawn,          SHCMD("variety --previous") },
     { MODKEY,                       XK_n,            focusstack,     {.i = -1 } },
     { MODKEY|ShiftMask,             XK_n,            setmfact,       {.f = -0.05} }, // Decrease main split size
-    { MODKEY|ControlMask|ShiftMask, XK_n,            spawn,          SHCMD("variety --trash") },
     { MODKEY,                       XK_e,            focusstack,     {.i = +1 } },
     { MODKEY|ShiftMask,             XK_e,            setmfact,       {.f = +0.05} }, // Increase main split size
-    { MODKEY|ControlMask|ShiftMask, XK_e,            spawn,          SHCMD("variety --move-to-favorites") },
     { MODKEY,                       XK_a,            focusmon,       {.i = -1 } },
     { MODKEY|ShiftMask,             XK_a,            tagmon,         {.i = -1 } },
-    { MODKEY|ControlMask|ShiftMask, XK_a,            spawn,          SHCMD("variety --next") },
     { MODKEY,                       XK_o,            spawn,          SHCMD("gnome-characters") },
     { MODKEY|ShiftMask,             XK_o,            spawn,          SHCMD("flameshot gui") },
 
@@ -213,6 +209,11 @@ static const Key keys[] = {
     { MODKEY|ControlMask|ShiftMask, XK_x,            defaultgaps,    {0} },
 
     { 0,                            XK_Print,        spawn,          SHCMD("flameshot gui") },
+
+    { MODKEY,                       XK_Left,         spawn,          SHCMD("variety --previous") },
+    { MODKEY,                       XK_Right,        spawn,          SHCMD("variety --next") },
+    { MODKEY|ShiftMask,             XK_Up,           spawn,          SHCMD("variety --move-to-favorites") },
+    { MODKEY|ShiftMask,             XK_Down,         spawn,          SHCMD("variety --trash") },
 
     { 0,                   XF86XK_AudioMute,         spawn,          SHCMD("volume --toggle-mute") },
     { 0,                   XF86XK_AudioRaiseVolume,  spawn,          SHCMD("volume --allow-boost -i 3") },
