@@ -164,8 +164,19 @@ static const Key keys[] = {
     TAGKEYS(                        XK_f,                            6)
     TAGKEYS(                        XK_u,                            7)
     TAGKEYS(                        XK_comma,                        8)
-    // { MODKEY,                       XK_0,            view,           {.ui = ~0 } }, // Enable all tags
-    // { MODKEY|ShiftMask,             XK_0,            tag,            {.ui = ~0 } }, // Tag with all tags
+
+    TAGKEYS(                        XK_1,                            0)
+    TAGKEYS(                        XK_2,                            1)
+    TAGKEYS(                        XK_3,                            2)
+    TAGKEYS(                        XK_4,                            3)
+    TAGKEYS(                        XK_5,                            4)
+    TAGKEYS(                        XK_6,                            5)
+    TAGKEYS(                        XK_7,                            6)
+    TAGKEYS(                        XK_8,                            7)
+    TAGKEYS(                        XK_9,                            8)
+    { MODKEY,                       XK_0,            view,           {.ui = ~0 } }, // Enable all tags
+    { MODKEY|ShiftMask,             XK_0,            tag,            {.ui = ~0 } }, // Tag with all tags
+
     { MODKEY,                       XK_BackSpace,    spawn,          SHCMD("sysact -n 1") }, // Lock
     { MODKEY|ShiftMask,             XK_BackSpace,    spawn,          SHCMD("sysact -n 2") }, // Shutdown
     { MODKEY|ControlMask,           XK_BackSpace,    spawn,          SHCMD("sysact -n 3") }, // Reboot
