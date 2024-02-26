@@ -186,8 +186,8 @@ static const Key keys[] = {
     { MODKEY,                       XK_s,            spawn,          SHCMD("j4-dmenu-desktop") },
     { MODKEY|ShiftMask,             XK_s,            spawn,          SHCMD("dmenu_run") },
     { MODKEY,                       XK_r,            spawn,          SHCMD("thunar") },
-    { MODKEY|ShiftMask,             XK_Enter,        spawn,          SHCMD("thunar") },
-    { MODKEY,                       XK_Enter,        spawn,          {.v = termcmd } },
+    { MODKEY|ShiftMask,             XK_Return,       spawn,          SHCMD("thunar") },
+    { MODKEY,                       XK_Return,       spawn,          {.v = termcmd } },
     { MODKEY,                       XK_t,            spawn,          {.v = termcmd } },
     { MODKEY,                       XK_g,            zoom,           {0} }, // Swap active window with next
 
