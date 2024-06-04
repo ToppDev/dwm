@@ -181,6 +181,7 @@ struct Systray {
 };
 
 static char DWMBLOCKSLOCKFILE[40];
+static char FOCUSMONSWITCHFILE[40];
 
 /* function declarations */
 static void applyrules(Client *c);
@@ -858,6 +859,13 @@ Monitor *
 dirtomon(int dir)
 {
     Monitor *m = NULL;
+
+    FILE* fptr;
+    if (fptr = fopen(FOCUSMONSWITCHFILE, "r")) {
+        if (fgetc(fptr) == '1')
+            dir *= -1;
+        fclose(fptr);
+    }
 
     if (dir > 0) {
         if (!(m = selmon->next))
@@ -1949,6 +1957,8 @@ setup(void)
 
     /* init dwmblocks PID file */
     sprintf(DWMBLOCKSLOCKFILE, "/var/run/user/%d/dwmblocks.pid", getuid());
+
+    sprintf(FOCUSMONSWITCHFILE, "/var/run/user/%d/dwmswitchmon", getuid());
 
     /* init screen */
     screen = DefaultScreen(dpy);
