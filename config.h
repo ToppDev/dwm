@@ -102,6 +102,7 @@ static const Rule rules[] = {
     { "Peek",                   NULL,        NULL,                       0,         1,          -1 },
     { "flameshot",              NULL,        NULL,                       0,         1,          -1 },
     { "org.gnome.Characters",   NULL,        NULL,                       0,         1,          -1 },
+    { "zenity",                 NULL,        NULL,                       0,         1,          -1 },
     { NULL,                     NULL,        "Copying",                  0,         1,          -1 },
     { NULL,                     NULL,        "Deleting",                 0,         1,          -1 },
     { NULL,                     NULL,        "Moving",                   0,         1,          -1 },
