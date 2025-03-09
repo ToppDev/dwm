@@ -186,8 +186,8 @@ static const Key keys[] = {
     { MODKEY,                       XK_Tab,          shiftview,      {.i = +1 } }, // Shift through tags
     { MODKEY,                       XK_s,            spawn,          SHCMD("j4-dmenu-desktop") },
     { MODKEY|ShiftMask,             XK_s,            spawn,          SHCMD("dmenu_run") },
-    { MODKEY,                       XK_r,            spawn,          SHCMD("thunar") },
-    { MODKEY|ShiftMask,             XK_Return,       spawn,          SHCMD("thunar") },
+    { MODKEY,                       XK_r,            spawn,          SHCMD(TERMINAL " -e tmux new-session yazi") },
+    { MODKEY|ShiftMask,             XK_Return,       spawn,          SHCMD(TERMINAL " -e tmux new-session yazi") },
     { MODKEY,                       XK_Return,       spawn,          {.v = termcmd } },
     { MODKEY,                       XK_t,            spawn,          {.v = termcmd } },
     { MODKEY,                       XK_g,            zoom,           {0} }, // Swap active window with next
@@ -252,12 +252,12 @@ static const Key keys[] = {
     { 0,                   XF86XK_ScreenSaver,       spawn,          SHCMD("lockscreen & xset dpms force off; playerctl pause || mpc pause && pauseallmpv") },
     { 0,                   XF86XK_TaskPane,          spawn,          SHCMD(TERMINAL " -e htop") },
     { 0,                   XF86XK_Mail,              spawn,          SHCMD("thunderbird") },
-    { 0,                   XF86XK_MyComputer,        spawn,          SHCMD("thunar") },
-    { 0,                   XF86XK_Explorer,          spawn,          SHCMD("thunar") },
+    { 0,                   XF86XK_MyComputer,        spawn,          SHCMD(TERMINAL " -e tmux new-session yazi") },
+    { 0,                   XF86XK_Explorer,          spawn,          SHCMD(TERMINAL " -e tmux new-session yazi") },
     { 0,                   XF86XK_TouchpadToggle,    spawn,          SHCMD("touchpadtoggle") },
     { 0,                   XF86XK_MonBrightnessUp,   spawn,          SHCMD("backlight -inc 15") },
     { 0,                   XF86XK_MonBrightnessDown, spawn,          SHCMD("backlight -dec 15") },
-    // { 0,                   XK_Help,                  spawn,          SHCMD("thunar") },
+    // { 0,                   XK_Help,                  spawn,          SHCMD(TERMINAL " -e tmux new-session yazi") },
 
 };
 
